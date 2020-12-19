@@ -7,12 +7,17 @@
   </head>
   <body>
     <h1>Loops and arrays</h1>
+    <ul>
+      <li>Sydney</li>
+      <li>Perth</li>
+      <li>Melbourne</li>
+      <li>Canberra</li>
+    </ul>
     <script>
       function showCity(params) {
-        alert(params);
+        alert(params.innerHTML);
       }
-      let cities = ["Sydney", "Perth", "Melbourne"];
-
+      let cities = document.querySelectorAll("li");
       cities.forEach(showCity);
     </script>
   </body>
