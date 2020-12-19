@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      li em {
+        color: blue;
+      }
+    </style>
     <title>JS Beginner recap</title>
   </head>
   <body>
@@ -13,9 +18,11 @@
       <li>Melbourne</li>
       <li>Canberra</li>
     </ul>
+    <p>Go to next <a href="/pages/index.html">page</a></p>
     <script>
       function showCity(params) {
-        alert(params.innerHTML);
+        //alert(params.innerHTML);
+        params.innerHTML = `<em> ${params.innerHTML} </em>`;
       }
       let cities = document.querySelectorAll("li");
       cities.forEach(showCity);
