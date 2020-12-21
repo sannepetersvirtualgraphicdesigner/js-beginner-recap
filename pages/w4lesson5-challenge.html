@@ -7,15 +7,16 @@
   </head>
   <body>
     <script>
-      // Challenge
-      // 1. Create a function isWindy and alert 'It is windy'
-      // 2. Call the function twice
-
-      function isWindy() {
-        alert("It is windy");
+      function isCold(temperature) {
+        return temperature <= 10;
       }
-      isWindy();
-      isWindy();
+      let temperature = prompt(`What temp is it today?`);
+
+      if (isCold(temperature)) {
+        alert(`cold`);
+      } else {
+        alert(`not cold`);
+      }
     </script>
   </body>
 </html>
