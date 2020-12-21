@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>She Codes Plus</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <h1>JavaScript Dates</h1>
+
+    <h3>JS Challenge 1</h3>
+    <p>Log the current date</p>
+
+    <h3>JS Challenge 2</h3>
+    <p>Log the number of milliseconds in the current time</p>
+
+    <h3>JS Challenge 3</h3>
+    <p>Log the current day</p>
+
+    <h3>JS Challenge 4</h3>
+    <p>Log the current year</p>
+
+    <h3>JS Challenge 5</h3>
+    <p>Log the current month</p>
+
+    <h3>JS Challenge 6</h3>
+    <p>
+      Display the current date following the following format: Today is
+      Thursday, April 4, 2020
+    </p>
+
+    <h3>JS Challenge 7</h3>
+    <p>
+      Create a function formatDate which returns a date following this format:
+      Thursday, April 4, 2020 Call this function with the current time Log the
+      result such as
+      <code> console.log(formatDate(new Date())); </code>
+    </p>
+
+    <script>
+      //Challenge 1
+      //Log the current date
+      let currentDate = new Date();
+      console.log(currentDate);
+
+      //Challenge 2
+      //Log the number of milliseconds in the current time
+      console.log(currentDate.getMilliseconds());
+
+      //Challenge 3
+      //Log the current day
+      console.log(currentDate.getDay());
+
+      //Challenge 4
+      //Log the current year
+      console.log(currentDate.getFullYear());
+
+      //Challenge 5
+      //Log the current month
+      console.log(currentDate.getMonth());
+
+      //Challenge 6
+      //Display the current date following the following format: Today is
+      //Thursday, April 4, 2020
+      let date = currentDate.getDate();
+
+      let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+      let day = days[currentDate.getDay()];
+
+      let months = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "July",
+        "Aug",
+        "Sept",
+        "Oct",
+        "Nov",
+        "Dec",
+      ];
+      let month = months[currentDate.getMonth()];
+      let year = currentDate.getFullYear();
+
+      let sentence = `Today is ${day}, ${month} ${date}, ${year}`;
+      console.log(sentence);
+
+      //Challenge 7
+
+      function formatDate(today) {
+        let date = today.getDate();
+
+        let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+        let day = days[today.getDay()];
+
+        let months = [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "July",
+          "Aug",
+          "Sept",
+          "Oct",
+          "Nov",
+          "Dec",
+        ];
+        let month = months[today.getMonth()];
+        let year = today.getFullYear();
+
+        return `Today is really ${day}, ${month} ${date}, ${year}`;
+      }
+
+      console.log(formatDate(new Date()));
+    </script>
+  </body>
+</html>
