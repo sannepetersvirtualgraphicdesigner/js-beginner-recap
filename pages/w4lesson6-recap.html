@@ -38,25 +38,63 @@
     </p>
 
     <script>
-      //Challenge 1
-      //Log the current date
-      let now = new Date();
-      console.log(now);
-      //Challenge 2
-      //Log the number of milliseconds in the current time
+      // //Challenge 1
+      // //Log the current date
+      let currentTime = new Date();
+      // console.log(now);
+      // //Challenge 2
+      // //Log the number of milliseconds in the current time
+      // console.log(now.getMilliseconds());
+      // //Challenge 3
+      // //Log the current day
+      // console.log(now.getDate());
+      // //Challenge 4
+      // //Log the current year
+      // console.log(now.getFullYear());
+      // //Challenge 5
+      // //Log the current month
+      // console.log(now.getMonth());
+      // //Challenge 6
+      // //Display the current date following the following format: Today is
+      // //Thursday, April 4, 2020
 
-      //Challenge 3
-      //Log the current day
+      // let sentence = `Today is ${now.getDay()}, ${now.getMonth()} 4, ${now.getFullYear()}`;
+      // console.log(sentence);
+      function formatDate(date) {
+        let days = [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ];
+        let months = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
 
-      //Challenge 4
-      //Log the current year
+        let currentDay = days[date.getDay()];
+        let currentMonth = months[date.getMonth()];
+        let currentDate = date.getDate();
+        let currentYear = date.getFullYear();
 
-      //Challenge 5
-      //Log the current month
-
-      //Challenge 6
-      //Display the current date following the following format: Today is
-      //Thursday, April 4, 2020
+        let formattedDate = `Today is ${currentDay}, ${currentMonth} ${currentDate}, ${currentYear}`;
+        //console.log(formattedDate);
+        return formattedDate;
+      }
+      console.log(formatDate(currentTime));
 
       //Challenge 7
       //Create a function formatDate which returns a date following this format: Thursday, April 4, 2020 Call this function with the current time Log the result such as console.log(formatDate(new Date()));
