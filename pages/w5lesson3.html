@@ -28,6 +28,8 @@
         width: 150px;
       }
     </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
 
   <body>
@@ -51,6 +53,13 @@
     <h3>JS Challenge 3</h3>
     <p>Log the first comment email from the API response</p>
 
-    <script></script>
+    <script>
+      function showComments(response) {
+        console.log(response.data[0].email);
+      }
+
+      let apiUrl = "https://jsonplaceholder.typicode.com/comments";
+      axios.get(apiUrl).then(showComments);
+    </script>
   </body>
 </html>
