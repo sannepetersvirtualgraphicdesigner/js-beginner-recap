@@ -28,6 +28,7 @@
         width: 150px;
       }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
 
   <body>
@@ -51,6 +52,21 @@
       degrees in Sydney
     </p>
 
-    <script></script>
+    <script>
+      let apiKey = "e347c1e77eff0865f24ace0de5ae743f";
+      let city = "Sydney";
+      let unit = "metric";
+      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
+
+      function showTemp(response) {
+        console.log(apiUrl);
+        let temp = Math.round(response.data.main.temp);
+        console.log(temp);
+        let heading = document.querySelector("h1");
+        heading.innerHTML = `It is ${temp} degrees in ${city}`;
+      }
+
+      axios.get(apiUrl).then(showTemp);
+    </script>
   </body>
 </html>
