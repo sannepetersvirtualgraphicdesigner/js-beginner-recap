@@ -54,16 +54,19 @@
 
     <script>
       let apiKey = "e347c1e77eff0865f24ace0de5ae743f";
-      let city = "Sydney";
+      let city = "Paris";
       let unit = "metric";
       let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
 
       function showTemp(response) {
-        console.log(apiUrl);
         let temp = Math.round(response.data.main.temp);
-        console.log(temp);
+        let city = response.data.name;
+        let message = `It is ${temp} degrees in ${city}`;
         let heading = document.querySelector("h1");
-        heading.innerHTML = `It is ${temp} degrees in ${city}`;
+        heading.innerHTML = message;
+        console.log(temp);
+        console.log(response);
+        console.log(message);
       }
 
       axios.get(apiUrl).then(showTemp);
